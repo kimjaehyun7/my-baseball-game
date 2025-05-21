@@ -2,7 +2,7 @@ package baseball.view;
 
 public class InputView {
 
-    public String readInput() {
+    public static String readInput() {
         return null;
     }
 }

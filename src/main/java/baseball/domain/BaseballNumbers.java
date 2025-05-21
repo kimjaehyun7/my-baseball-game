@@ -9,7 +9,7 @@ public class BaseballNumbers {
         this.numbers = numbers;
     }
 
-    public BaseballNumbers of(String input) {
+    public static BaseballNumbers of(String input) {
         return null;
     }
 
