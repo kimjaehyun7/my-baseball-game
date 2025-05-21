@@ -1,9 +1,6 @@
 package baseball.domain;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class BaseballNumbers {
     private final List<Integer> numbers;
@@ -32,7 +29,12 @@ public class BaseballNumbers {
     }
 
     public static BaseballNumbers generateRandom() {
-        return null;
+        Set<Integer> numbers = new LinkedHashSet<>();
+        Random random = new Random();
+        while (numbers.size() < 3) {
+            numbers.add(random.nextInt(1, 10));
+        }
+        return new BaseballNumbers(new ArrayList<>(numbers));
     }
 
     public List<Integer> getNumbers() {
