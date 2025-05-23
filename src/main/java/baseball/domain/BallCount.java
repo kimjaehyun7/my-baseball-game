@@ -13,6 +13,10 @@ public class BallCount {
         return strike == 3;
     }
 
+    public boolean isNothing() {
+        return strike == 0 && ball == 0;
+    }
+
     public int getStrike() {
         return strike;
     }
@@ -23,6 +27,9 @@ public class BallCount {
 
     @Override
     public String toString() {
-        return null;
+        if (isNothing()) {
+            return "낫싱";
+        }
+        return "볼: " + ball + " 스트라이크: " + strike;
     }
 }
