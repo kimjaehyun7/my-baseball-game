@@ -23,8 +23,15 @@ public class BaseballGameController {
                     OutputView.printErrorMessage(e.getMessage());
                 }
             }
-            if (InputView.reStart().equals("2")) {
-                break;
+            while (true) {
+                try {
+                    if (InputView.reStart().equals("2")) {
+                        return;
+                    }
+                    break;
+                } catch (IllegalArgumentException e) {
+                    OutputView.printErrorMessage(e.getMessage());
+                }
             }
         }
     }

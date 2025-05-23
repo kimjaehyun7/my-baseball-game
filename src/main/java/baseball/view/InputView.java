@@ -12,6 +12,14 @@ public class InputView {
 
     public static String reStart() {
         System.out.print("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요: ");
-        return scanner.nextLine();
+        String input = scanner.nextLine();
+        reStartValidate(input);
+        return input;
+    }
+
+    private static void reStartValidate(String input) {
+        if (!input.equals("1") && !input.equals("2")) {
+            throw new IllegalArgumentException("1 또는 2만 입력할 수 있습니다.");
+        }
     }
 }
