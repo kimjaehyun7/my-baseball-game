@@ -37,14 +37,16 @@ public class BaseballGameController {
     }
 
     private static void game(BaseballNumbers randomNumbers) {
+        int attempt = 0;
         Umpire umpire = new Umpire(randomNumbers);
         BallCount result;
         do {
             BaseballNumbers inputNumbers = BaseballNumbers.of(InputView.readInput());
+            attempt++;
             result = umpire.compare(inputNumbers);
             OutputView.printResult(result);
         } while (!result.isThreeStrike());
 
-        OutputView.endGame();
+        OutputView.endGame(attempt);
     }
 }

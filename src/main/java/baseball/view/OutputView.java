@@ -23,7 +23,7 @@ public class OutputView {
         System.out.println(result);
     }
 
-    public static void endGame() {
-        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+    public static void endGame(int attempt) {
+        System.out.println("3개의 숫자를 모두 맞히셨습니다! 시도 횟수:" + attempt + "회 [게임 종료]");
     }
 }
