@@ -11,8 +11,7 @@ public class BaseballGameController {
     public void run() {
 
         while (true) {
-            System.out.println("===============숫자야구 게임===============");
-            System.out.println("규칙 : 서로 다른 3자리 숫자를 입력해야 합니다.");
+            OutputView.printStartMessage();
             BaseballNumbers randomNumbers = BaseballNumbers.generateRandom();
 
             boolean success = false;
@@ -21,8 +20,7 @@ public class BaseballGameController {
                     game(randomNumbers);
                     success = true;
                 } catch (IllegalArgumentException e) {
-                    System.out.println("[예외발생] " + e.getMessage());
-                    System.out.println("숫자를 다시 입력하세요.");
+                    OutputView.printErrorMessage(e.getMessage());
                 }
             }
             if (InputView.reStart().equals("2")) {
